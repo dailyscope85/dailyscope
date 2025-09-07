@@ -1,6 +1,5 @@
 name: News Fetch
 
-# Trigger manually or on a schedule
 on:
   workflow_dispatch:       # Manual trigger
   schedule:                # Optional: fetch news automatically
@@ -10,6 +9,22 @@ jobs:
   fetch-news:
     runs-on: ubuntu-latest
 
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: varsha12   # matches local password
+          MYSQL_DATABASE: dailyscope
+          MYSQL_USER: root                # same as local
+          MYSQL_PASSWORD: varsha12
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --silent"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -17,9 +32,21 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2'   # or your desired PHP version
+          php-version: '8.2'
+
+      - name: Wait for MySQL to be ready
+        run: |
+          until mysqladmin ping -h127.0.0.1 -uroot -pvarsha12 --silent; do
+            echo "Waiting for MySQL..."
+            sleep 2
+          done
 
       - name: Run PHP script
+        env:
+          DB_HOST: 127.0.0.1
+          DB_USER: root
+          DB_PASSWORD: varsha12
+          DB_NAME: dailyscope
         run: php ./news_fetch.php
 
       - name: Upload log artifact
@@ -28,3 +55,4 @@ jobs:
         with:
           name: news-fetch-log
           path: news_fetch.log
+

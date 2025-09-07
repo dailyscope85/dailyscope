@@ -13,12 +13,8 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: varsha12   # matches local password
+          MYSQL_ROOT_PASSWORD: varsha12
           MYSQL_DATABASE: dailyscope
-          MYSQL_USER: root                # same as local
-          MYSQL_PASSWORD: varsha12
-        ports:
-          - 3306:3306
         options: >-
           --health-cmd="mysqladmin ping --silent"
           --health-interval=10s
@@ -55,4 +51,5 @@ jobs:
         with:
           name: news-fetch-log
           path: news_fetch.log
+
 

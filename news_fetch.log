@@ -1,0 +1,36 @@
+
+PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo for newsdata.io failed: Temporary failure in name resolution in /opt/lampp/htdocs/dailyscope/news_fetch.php on line 11
+
+Warning: file_get_contents(): php_network_getaddresses: getaddrinfo for newsdata.io failed: Temporary failure in name resolution in /opt/lampp/htdocs/dailyscope/news_fetch.php on line 11
+PHP Warning:  file_get_contents(https://newsdata.io/api/1/news?apikey=YOUR_API_KEY&country=in): Failed to open stream: php_network_getaddresses: getaddrinfo for newsdata.io failed: Temporary failure in name resolution in /opt/lampp/htdocs/dailyscope/news_fetch.php on line 11
+
+Warning: file_get_contents(https://newsdata.io/api/1/news?apikey=YOUR_API_KEY&country=in): Failed to open stream: php_network_getaddresses: getaddrinfo for newsdata.io failed: Temporary failure in name resolution in /opt/lampp/htdocs/dailyscope/news_fetch.php on line 11
+Failed to fetch API.
+✅ News updated successfully.
+2025-09-05 17:04:29 - ✅ News updated successfully.
+
+cURL Error: Couldn't resolve proxy 'hostelinternet.rgukt.ac.in'[2025-09-05 17:21:49] cURL Error: Couldn't resolve proxy 'hostelinternet.rgukt.ac.in'
+2025-09-05 14:01:38 - Proxy not available, using direct connection
+2025-09-05 14:01:59 - ✅ News updated successfully.
+
+2025-09-05 14:30:01 - Proxy not available, using direct connection
+2025-09-05 14:30:06 - ✅ News updated successfully.
+✅ News updated successfully.
+
+2025-09-05 17:30:02 - Proxy not available, using direct connection
+2025-09-05 17:30:08 - ✅ News updated successfully.
+✅ News updated successfully.
+
+2025-09-06 13:30:01 - Proxy not available, using direct connection
+2025-09-06 13:30:07 - ✅ News updated successfully.
+✅ News updated successfully.
+
+2025-09-06 17:30:01 - Proxy not available, using direct connection
+2025-09-06 17:30:13 - ✅ News updated successfully.
+✅ News updated successfully.
+
+2025-09-07 06:30:01 - Using proxy hostelinternet.rgukt.ac.in:3128
+2025-09-07 06:30:21 - cURL Error: Operation timed out after 10000 milliseconds with 63838 out of 129231 bytes received
+
+2025-09-07 12:30:01 - Using proxy hostelinternet.rgukt.ac.in:3128
+2025-09-07 12:30:16 - cURL Error: Operation timed out after 5000 milliseconds with 0 out of 0 bytes received

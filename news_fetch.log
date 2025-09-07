@@ -34,3 +34,11 @@ cURL Error: Couldn't resolve proxy 'hostelinternet.rgukt.ac.in'[2025-09-05 17:21
 
 2025-09-07 12:30:01 - Using proxy hostelinternet.rgukt.ac.in:3128
 2025-09-07 12:30:16 - cURL Error: Operation timed out after 5000 milliseconds with 0 out of 0 bytes received
+2025-09-07 13:20:51 - Trying with proxy hostelinternet.rgukt.ac.in:3128
+2025-09-07 13:20:55 - ✅ News updated successfully.
+2025-09-07 13:22:38 - Trying with proxy hostelinternet.rgukt.ac.in:3128
+2025-09-07 13:22:41 - ✅ News updated successfully.
+
+2025-09-07 13:30:02 - Trying with proxy hostelinternet.rgukt.ac.in:3128
+2025-09-07 13:30:07 - Proxy failed: Operation timed out after 5001 milliseconds with 0 out of 0 bytes received. Retrying direct...
+2025-09-07 13:30:12 - ❌ Final cURL Error: Connection timed out after 5001 milliseconds

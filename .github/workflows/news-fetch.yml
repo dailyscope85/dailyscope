@@ -1,12 +1,13 @@
-name: Fetch News
+name: News Fetch
 
+# Trigger manually or on a schedule
 on:
-  schedule:
-    - cron: '0 * * * *'  # every hour
-  workflow_dispatch:  # allows manual run from GitHub
+  workflow_dispatch:       # Manual trigger
+  schedule:                # Optional: fetch news automatically
+    - cron: '0 * * * *'    # Every hour
 
 jobs:
-  fetch_news:
+  fetch-news:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +17,14 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: '8.2'   # or your desired PHP version
 
-     - name: Run PHP script
-  run: php ./news_fetch.php
+      - name: Run PHP script
+        run: php ./news_fetch.php
+
+      - name: Upload log artifact
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: news-fetch-log
+          path: news_fetch.log
